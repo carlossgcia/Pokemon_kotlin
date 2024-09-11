@@ -3,7 +3,7 @@ package com.pokemonapp.models
 data class Pokemon(
     val name: String,
     val nickname: String?,
-    val type: Type,               // Tipo del Pokémon (ej: "Fuego")
+    val type: Type,
     var pcPoints: Int,         // Puntos de combate (PC)
     val maxPS: Int,    // PS máximo (salud total)
     var actualPS: Int    // PS actuales (salud actual)
