@@ -26,4 +26,3 @@ data class Pokemon(
         return "Pokemon(nombre='$name', apodo='$nickname', tipo='$type', PC=$pcPoints, PS=$actualPS/$maxPS)"
     }
 }
-
