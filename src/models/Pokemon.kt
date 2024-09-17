@@ -4,9 +4,9 @@ data class Pokemon(
     val name: String,
     val nickname: String?,
     val type: Type,
-    var pcPoints: Int,         // Puntos de combate (PC)
-    val maxPS: Int,    // PS máximo (salud total)
-    var actualPS: Int    // PS actuales (salud actual)
+    var pcPoints: Int,
+    val maxPS: Int,
+    var actualPS: Int
 ) {
     init {
         if (actualPS > maxPS) {
@@ -35,16 +35,4 @@ data class Pokemon(
     }
 }
 
-data class Type(
-    val name: String,
-    val strengths: List<String>,
-    val weaknesses: List<String>
-) {
-    fun isStrongAgainst(anotherType: Type): Boolean {
-        return anotherType.name in strengths
-    }
 
-    fun isWeakAgainst(anotherType: Type): Boolean {
-        return anotherType.name in strengths
-    }
-}

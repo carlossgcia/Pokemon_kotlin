@@ -3,8 +3,8 @@ package models
 import com.pokemonapp.models.Pokemon
 
 data class Trainer(
-    val name: String,                    // Nombre del entrenador
-    val pokemonTeam: MutableList<Pokemon> // Lista de Pokemons que tiene el entrenador (equipo Pokemon)
+    val name: String,
+    val pokemonTeam: MutableList<Pokemon>
 ) {
 
     fun addPokemon(pokemon: Pokemon) {

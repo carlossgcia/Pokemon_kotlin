@@ -1,0 +1,21 @@
+package com.pokemonapp
+
+const val FIRE = "Fire"
+const val WATER = "Water"
+const val GRASS = "Grass"
+const val ELECTRIC = "Electric"
+const val ICE = "Ice"
+const val ROCK = "Rock"
+const val GROUND = "Ground"
+const val BUG = "Bug"
+const val STEEL = "Steel"
+const val POISON = "Poison"
+const val FLYING = "Flying"
+const val DRAGON = "Dragon"
+const val GHOST = "Ghost"
+const val FAIRY = "Fairy"
+const val FIGHTING = "Fighting"
+const val NORMAL = "Normal"
+const val PSYCHIC = "Psychic"
+const val DARK = "Dark"
+
