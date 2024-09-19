@@ -19,7 +19,7 @@ data class Pokemon(
 
     fun atack(rivalPokemon: Pokemon) {
         if (chargedAttack.isCharged()) {
-            if (chargedAttack.chargedLevel ?: 0 >= chargedAttack.cargaNecesaria) {
+            if (chargedAttack.chargedLevel ?: 0 >= chargedAttack.necessaryCharge) {
                 rivalPokemon.hurt(chargedAttack.damagePoints)
                 chargedAttack.setChargedLevel(0)
             } else {
