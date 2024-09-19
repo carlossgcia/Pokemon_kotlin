@@ -16,119 +16,123 @@ data class Type(
     }
 }
 
-// Factory Design Pattern for creating Type instances
 object TypeFactory {
-    fun createType(typeName: String): Type {
+    fun createType(typeName: ElementType): Type {
         return when (typeName) {
-            STEEL -> Type(
-                name = STEEL,
-                strengths = listOf(ROCK, FAIRY, ICE),
-                weaknesses = listOf(FIGHTING, FIRE, GROUND)
+            ElementType.STEEL -> Type(
+                name = ElementType.STEEL.type,
+                strengths = listOf(ElementType.ROCK.type, ElementType.FAIRY.type, ElementType.ICE.type),
+                weaknesses = listOf(ElementType.FIGHTING.type, ElementType.FIRE.type, ElementType.GROUND.type)
             )
 
-            WATER -> Type(
-                name = WATER,
-                strengths = listOf(GROUND, FIRE, ROCK),
-                weaknesses = listOf(GRASS, ELECTRIC)
+            ElementType.WATER -> Type(
+                name = ElementType.WATER.type,
+                strengths = listOf(ElementType.GROUND.type, ElementType.FIRE.type, ElementType.ROCK.type),
+                weaknesses = listOf(ElementType.GRASS.type, ElementType.ELECTRIC.type)
             )
 
-            BUG -> Type(
-                name = BUG,
-                strengths = listOf(GRASS, PSYCHIC, DARK),
-                weaknesses = listOf(FLYING, FIRE, ROCK)
+            ElementType.BUG -> Type(
+                name = ElementType.BUG.type,
+                strengths = listOf(ElementType.GRASS.type, ElementType.PSYCHIC.type, ElementType.DARK.type),
+                weaknesses = listOf(ElementType.FLYING.type, ElementType.FIRE.type, ElementType.ROCK.type)
             )
 
-            DRAGON -> Type(
-                name = DRAGON,
-                strengths = listOf(DRAGON),
-                weaknesses = listOf(FAIRY, ICE, DRAGON)
+            ElementType.DRAGON -> Type(
+                name = ElementType.DRAGON.type,
+                strengths = listOf(ElementType.DRAGON.type),
+                weaknesses = listOf(ElementType.FAIRY.type, ElementType.ICE.type, ElementType.DRAGON.type)
             )
 
-            ELECTRIC -> Type(
-                name = ELECTRIC,
-                strengths = listOf(FLYING, WATER),
-                weaknesses = listOf(GROUND)
+            ElementType.ELECTRIC -> Type(
+                name = ElementType.ELECTRIC.type,
+                strengths = listOf(ElementType.FLYING.type, ElementType.WATER.type),
+                weaknesses = listOf(ElementType.GROUND.type)
             )
 
-            GHOST -> Type(
-                name = GHOST,
-                strengths = listOf(GHOST, PSYCHIC),
-                weaknesses = listOf(GHOST, DARK)
+            ElementType.GHOST -> Type(
+                name = ElementType.GHOST.type,
+                strengths = listOf(ElementType.GHOST.type, ElementType.PSYCHIC.type),
+                weaknesses = listOf(ElementType.GHOST.type, ElementType.DARK.type)
             )
 
-            FIRE -> Type(
-                name = FIRE,
-                strengths = listOf(BUG, GRASS, STEEL, ICE),
-                weaknesses = listOf(GROUND, WATER, ROCK)
+            ElementType.FIRE -> Type(
+                name = ElementType.FIRE.type,
+                strengths = listOf(ElementType.BUG.type, ElementType.GRASS.type, ElementType.STEEL.type, ElementType.ICE.type),
+                weaknesses = listOf(ElementType.GROUND.type, ElementType.WATER.type, ElementType.ROCK.type)
             )
 
-            FAIRY -> Type(
-                name = FAIRY,
-                strengths = listOf(DARK, FIGHTING, DRAGON),
-                weaknesses = listOf(STEEL, POISON)
+            ElementType.FAIRY -> Type(
+                name = ElementType.FAIRY.type,
+                strengths = listOf(ElementType.DARK.type, ElementType.FIGHTING.type, ElementType.DRAGON.type),
+                weaknesses = listOf(ElementType.STEEL.type, ElementType.POISON.type)
             )
 
-            ICE -> Type(
-                name = ICE,
-                strengths = listOf(GRASS, GROUND, FLYING, DRAGON),
-                weaknesses = listOf(FIGHTING, STEEL, ROCK, FIRE)
+            ElementType.ICE -> Type(
+                name = ElementType.ICE.type,
+                strengths = listOf(ElementType.GRASS.type, ElementType.GROUND.type, ElementType.FLYING.type, ElementType.DRAGON.type),
+                weaknesses = listOf(ElementType.FIGHTING.type, ElementType.STEEL.type, ElementType.ROCK.type, ElementType.FIRE.type)
             )
 
-            FIGHTING -> Type(
-                name = FIGHTING,
-                strengths = listOf(ROCK, ICE, STEEL, NORMAL, DARK),
-                weaknesses = listOf(PSYCHIC, FLYING, FAIRY)
+            ElementType.FIGHTING -> Type(
+                name = ElementType.FIGHTING.type,
+                strengths = listOf(ElementType.ROCK.type, ElementType.ICE.type, ElementType.STEEL.type, ElementType.NORMAL.type, ElementType.DARK.type),
+                weaknesses = listOf(ElementType.PSYCHIC.type, ElementType.FLYING.type, ElementType.FAIRY.type)
             )
 
-            NORMAL -> Type(
-                name = NORMAL,
-                strengths = listOf(GHOST),
-                weaknesses = listOf(FIGHTING)
+            ElementType.NORMAL -> Type(
+                name = ElementType.NORMAL.type,
+                strengths = listOf(ElementType.GHOST.type),
+                weaknesses = listOf(ElementType.FIGHTING.type)
             )
 
-            GRASS -> Type(
-                name = GRASS,
-                strengths = listOf(GROUND, ROCK, WATER),
-                weaknesses = listOf(FLYING, BUG, POISON, ICE, FIRE)
+            ElementType.GRASS -> Type(
+                name = ElementType.GRASS.type,
+                strengths = listOf(ElementType.GROUND.type, ElementType.ROCK.type, ElementType.WATER.type),
+                weaknesses = listOf(ElementType.FLYING.type, ElementType.BUG.type, ElementType.POISON.type, ElementType.ICE.type, ElementType.FIRE.type)
             )
 
-            PSYCHIC -> Type(
-                name = PSYCHIC,
-                strengths = listOf(FIGHTING, POISON),
-                weaknesses = listOf(BUG, GHOST, DARK)
+            ElementType.PSYCHIC -> Type(
+                name = ElementType.PSYCHIC.type,
+                strengths = listOf(ElementType.FIGHTING.type, ElementType.POISON.type),
+                weaknesses = listOf(ElementType.BUG.type, ElementType.GHOST.type, ElementType.DARK.type)
             )
 
-            ROCK -> Type(
-                name = ROCK,
-                strengths = listOf(FIRE, FLYING, ICE, BUG),
-                weaknesses = listOf(FIGHTING, GROUND, STEEL, WATER, GRASS)
+            ElementType.ROCK -> Type(
+                name = ElementType.ROCK.type,
+                strengths = listOf(ElementType.FIRE.type, ElementType.FLYING.type, ElementType.ICE.type, ElementType.BUG.type),
+                weaknesses = listOf(ElementType.FIGHTING.type, ElementType.GROUND.type, ElementType.STEEL.type, ElementType.WATER.type, ElementType.GRASS.type)
             )
 
-            DARK -> Type(
-                name = DARK,
-                strengths = listOf(PSYCHIC, GHOST),
-                weaknesses = listOf(FIGHTING, FAIRY, BUG)
+            ElementType.DARK -> Type(
+                name = ElementType.DARK.type,
+                strengths = listOf(ElementType.PSYCHIC.type, ElementType.GHOST.type),
+                weaknesses = listOf(ElementType.FIGHTING.type, ElementType.FAIRY.type, ElementType.BUG.type)
             )
 
-            GROUND -> Type(
-                name = GROUND,
-                strengths = listOf(FIRE, ELECTRIC, POISON, ROCK, STEEL),
-                weaknesses = listOf(WATER, GRASS, ICE)
+            ElementType.GROUND -> Type(
+                name = ElementType.GROUND.type,
+                strengths = listOf(ElementType.FIRE.type, ElementType.ELECTRIC.type, ElementType.POISON.type, ElementType.ROCK.type, ElementType.STEEL.type),
+                weaknesses = listOf(ElementType.WATER.type, ElementType.GRASS.type, ElementType.ICE.type)
             )
 
-            POISON -> Type(
-                name = POISON,
-                strengths = listOf(GRASS, FAIRY),
-                weaknesses = listOf(GROUND, PSYCHIC)
+            ElementType.POISON -> Type(
+                name = ElementType.POISON.type,
+                strengths = listOf(ElementType.GRASS.type, ElementType.FAIRY.type),
+                weaknesses = listOf(ElementType.GROUND.type, ElementType.PSYCHIC.type)
             )
 
-            FLYING -> Type(
-                name = FLYING,
-                strengths = listOf(BUG, FIGHTING, GRASS),
-                weaknesses = listOf(ROCK, ICE, ELECTRIC)
+            ElementType.FLYING -> Type(
+                name = ElementType.FLYING.type,
+                strengths = listOf(ElementType.BUG.type, ElementType.FIGHTING.type, ElementType.GRASS.type),
+                weaknesses = listOf(ElementType.ROCK.type, ElementType.ICE.type, ElementType.ELECTRIC.type)
             )
 
-            else -> throw IllegalArgumentException("Unknown type: $typeName")
+            ElementType.UNKNOWN -> Type(
+                name = ElementType.UNKNOWN.type,
+                strengths = listOf(),
+                weaknesses = listOf()
+            )
         }
     }
 }
+
