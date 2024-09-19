@@ -15,20 +15,17 @@ data class Pokemon(
         if (actualPS > maxPS) {
             actualPS = maxPS
         }
+        if (fastAttack.necessaryCharge != null ) {
+            throw IllegalArgumentException("Error: El ataque rápido ${fastAttack.name} de $name no puede tener un nivel de carga superior a 1.")
+        }
+
+        if (chargedAttack.necessaryCharge!! > 0 ) {
+            throw IllegalArgumentException("Error: El ataque cargado ${chargedAttack.name} de $name debe requerir una carga significativa.")
+        }
     }
 
-    fun atack(rivalPokemon: Pokemon) {
-        if (chargedAttack.isCharged()) {
-            if (chargedAttack.chargedLevel ?: 0 >= chargedAttack.necessaryCharge) {
-                rivalPokemon.hurt(chargedAttack.damagePoints)
-                chargedAttack.setChargedLevel(0)
-            } else {
-                println("No hay suficiente carga para ejecutar este ataque.")
-                chargedAttack.getChargedLevel()?.let { level ->
-                    chargedAttack.setChargedLevel(level + 1)
-                }
-            }
-        }
+    fun attack() {
+
     }
 
     fun hurt(damagePoints: Int) {

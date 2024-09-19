@@ -4,20 +4,11 @@ class Attack(
     val name: String,
     val type: Type,
     val damagePoints: Int,
-    val isCharged: Boolean,
-    var chargedLevel: Int?,
-    val necessaryCharge: Int = 9,
+    val chargedLevel: Int,
+    val necessaryCharge: Int? = 9,
 ) {
-    fun setChargedLevel(level: Int?) {
-        this.chargedLevel = level
+    override fun toString(): String {
+        return "Attack(name='$name', type=$type, damagePoints=$damagePoints, chargedLevel=$chargedLevel, necessaryCharge=$necessaryCharge)"
     }
-    fun getChargedLevel(): Int? {
-        return this.chargedLevel
-    }
-
-    fun isCharged(): Boolean {
-        return isCharged;
-    }
-
 
 }
