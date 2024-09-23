@@ -17,19 +17,6 @@ data class Pokemon(
         }
     }
 
-    fun atack(rivalPokemon: Pokemon) {
-        if (chargedAttack.isCharged()) {
-            if (chargedAttack.chargedLevel ?: 0 >= chargedAttack.necessaryCharge) {
-                rivalPokemon.hurt(chargedAttack.damagePoints)
-                chargedAttack.setChargedLevel(0)
-            } else {
-                println("No hay suficiente carga para ejecutar este ataque.")
-                chargedAttack.getChargedLevel()?.let { level ->
-                    chargedAttack.setChargedLevel(level + 1)
-                }
-            }
-        }
-    }
 
     fun hurt(damagePoints: Int) {
         actualPS = (actualPS - damagePoints).coerceAtLeast(0)
