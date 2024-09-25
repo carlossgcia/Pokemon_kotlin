@@ -1,4 +1,5 @@
-package com.pokemonapp
+package com.pokemonapp.models
+
 
 import com.pokemonapp.models.*
 import com.pokemonapp.models.TypeFactory.createType
@@ -29,9 +30,11 @@ fun main() {
     combat.executeTurn(Action.SWITCH)
 
 
+
     /*
     *  Despues definir los pokemons asignandole su tipo
     *  Definir el entrendor y asignarle los pokemons
     */
 
 }
+

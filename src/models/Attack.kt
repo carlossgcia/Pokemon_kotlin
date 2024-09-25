@@ -15,6 +15,7 @@ class Attack(
         return this.chargedLevel
     }*/
 
+
     override fun toString(): String {
         return "Attack(name='$name', type=$type, damagePoints=$damagePoints, chargedLevel=$chargedLevel, necessaryCharge=$necessaryCharge)"
     }
