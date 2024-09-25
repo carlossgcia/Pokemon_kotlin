@@ -15,6 +15,18 @@ data class Pokemon(
         if (actualPS > maxPS) {
             actualPS = maxPS
         }
+        if (fastAttack.necessaryCharge != null ) {
+            throw IllegalArgumentException("Error: El ataque rápido ${fastAttack.name} de $name no puede tener un nivel de carga superior a 1.")
+        }
+
+        if (chargedAttack.necessaryCharge!! > 0 ) {
+            throw IllegalArgumentException("Error: El ataque cargado ${chargedAttack.name} de $name debe requerir una carga significativa.")
+        }
+    }
+
+
+    fun attack() {
+
     }
 
 

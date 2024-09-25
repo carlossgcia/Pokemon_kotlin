@@ -1,10 +1,9 @@
-package com.pokemonapp
+package com.pokemonapp.models
 
-import com.pokemonapp.models.Pokemon
-import com.pokemonapp.models.Type
-import models.Trainer
+import com.pokemonapp.ElementType
 
 fun main() {
+
 
     /*
     *  Despues definir los pokemons asignandole su tipo
@@ -12,3 +11,4 @@ fun main() {
     */
 
 }
+
