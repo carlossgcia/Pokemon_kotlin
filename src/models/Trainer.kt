@@ -4,9 +4,14 @@ import com.pokemonapp.models.Pokemon
 
 data class Trainer(
     val name: String,
-    val pokemonTeam: MutableList<Pokemon>
-) {
+    val pokemonTeam: MutableList<Pokemon>,
 
+) {
+    var activePokemon: Pokemon = pokemonTeam[0]
+
+    fun switchActivePokemon() {
+        activePokemon = pokemonTeam.first { it.actualPS > 0 && it != activePokemon }
+    }
     fun addPokemon(pokemon: Pokemon) {
         pokemonTeam.add(pokemon)
     }

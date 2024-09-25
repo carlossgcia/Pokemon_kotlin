@@ -14,6 +14,10 @@ data class Type(
     fun isWeakAgainst(anotherType: Type): Boolean {
         return anotherType.name in weaknesses
     }
+
+    override fun toString(): String {
+        return "Type(name='$name', strengths=$strengths, weaknesses=$weaknesses)"
+    }
 }
 
 object TypeFactory {

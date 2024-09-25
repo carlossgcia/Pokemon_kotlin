@@ -33,6 +33,10 @@ data class Pokemon(
             else -> "${name} y ${rivalPokemon.name} tienen tipos neutrales entre sí."
         }
     }
+    fun resetChargedAttack() {
+        chargedAttack.chargedLevel= 0
+    }
+
 
     override fun toString(): String {
         return "Pokemon(nombre='$name', apodo='$nickname', tipo='$type', PC=$pcPoints, PS=$actualPS/$maxPS)"
