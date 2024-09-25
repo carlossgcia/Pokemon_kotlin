@@ -24,9 +24,11 @@ data class Pokemon(
         }
     }
 
+
     fun attack() {
 
     }
+
 
     fun hurt(damagePoints: Int) {
         actualPS = (actualPS - damagePoints).coerceAtLeast(0)
