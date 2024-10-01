@@ -55,8 +55,10 @@ class Combat(val trainerA: Trainer, val trainerB: Trainer) {
         attackingTrainer: String
     ) {
         val baseDamage = attackingPokemon.chargedAttack.damagePoints
-        val bonus = baseDamage * 0.25
-        val totalDamage = ((baseDamage + bonus) * (attackingPokemon.pcPoints / 100.0)).toInt()
+        val chargedExtraDamage = 0.25
+        val bonus = baseDamage * chargedExtraDamage
+        val PCpercentage = attackingPokemon.pcPoints / 100.0
+        val totalDamage = ((baseDamage + bonus) * PCpercentage).toInt()
 
         defendingPokemon.hurt(totalDamage)
         println("El ${attackingPokemon.name} de ${attackingTrainer} usó ${attackingPokemon.chargedAttack.name} (ataque CARGADO) y causó ${totalDamage} de daño")
