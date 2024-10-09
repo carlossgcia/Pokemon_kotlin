@@ -22,9 +22,9 @@ class Combat(val trainerA: Trainer, val trainerB: Trainer) {
 
     fun attack() {
         val attackingPokemon = currentTurn.activePokemon
+        val attackingTrainer = currentTurn.name
         val defendingTrainer = if (currentTurn == trainerA) trainerB else trainerA
         val defendingPokemon = defendingTrainer.activePokemon
-        val attackingTrainer = currentTurn.name
 
         if (!isChargedAttack(attackingPokemon.chargedAttack)) {
             doFastAttack(attackingPokemon, defendingPokemon, attackingTrainer)
@@ -34,7 +34,6 @@ class Combat(val trainerA: Trainer, val trainerB: Trainer) {
     }
 
     fun isChargedAttack(chargedAttack: Attack): Boolean {
-
         val chargedLevel = chargedAttack.chargedLevel ?: return false
         return chargedLevel >= chargedAttack.necessaryCharge
     }
@@ -63,20 +62,18 @@ class Combat(val trainerA: Trainer, val trainerB: Trainer) {
         defendingPokemon.hurt(totalDamage)
         println("El ${attackingPokemon.name} de ${attackingTrainer} usó ${attackingPokemon.chargedAttack.name} (ataque CARGADO) y causó ${totalDamage} de daño")
 
-        attackingPokemon.chargedAttack.chargedLevel = 0
+        currentTurn.activePokemon.resetChargedAttack()
     }
-
 
     fun switchPokemon() {
         println("${currentTurn.name} cambió su Pokémon")
         currentTurn.switchActivePokemon()
-        currentTurn.activePokemon.resetChargedAttack() // Resetea la carga al cambiar de Pokémon
+        currentTurn.activePokemon.resetChargedAttack()
     }
 
     fun retreat() {
         println("${currentTurn.name} se retiró del combate")
     }
-
 
     fun isCombatOver(): Boolean {
         return trainerA.pokemonTeam.none { it.actualPS > 0 } || trainerB.pokemonTeam.none { it.actualPS > 0 }
